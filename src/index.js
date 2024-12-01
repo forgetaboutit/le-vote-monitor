@@ -8,6 +8,7 @@ const healthCheckUrl =
 const Prometheus = require("prom-client");
 
 app.get("/metrics", async (req, res) => {
+  res.setHeader("Content-Type", "text/plain; version=0.0.4");
   res.end(await Prometheus.register.metrics());
 });
 
