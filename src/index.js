@@ -7,7 +7,7 @@ const healthCheckUrl =
 
 const Prometheus = require("prom-client");
 
-app.get("/", async (req, res) => {
+app.get("/metrics", async (req, res) => {
   res.end(await Prometheus.register.metrics());
 });
 
